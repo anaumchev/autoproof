@@ -1,6 +1,7 @@
-# The workflow runs the AutoProof verifier on your Eiffel project.
 
 name: AutoProof
+
+description: This workflow runs the AutoProof verifier on your Eiffel project.
 
 # Controls when the workflow will run
 on:
