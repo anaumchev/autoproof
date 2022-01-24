@@ -3,6 +3,10 @@ name: AutoProof
 
 description: This workflow runs the AutoProof verifier on your Eiffel project.
 
+branding:
+  icon: 'check'
+  color: 'green'
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
