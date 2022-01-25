@@ -1,19 +1,7 @@
 # action.yml
 name: 'AutoProof'
 description: 'Compile and verify an Eiffel project'
-#inputs:
-#  who-to-greet:  # id of input
-#    description: 'Who to greet'
-#    required: true
-#    default: 'World'
-outputs:
-  compilation: # id of output
-    description: 'Compilation output'
-  verification:
-    description: 'Verification output'
     
 runs:
   using: 'docker'
   image: 'Dockerfile'
-#  args:
-#    - ${{ inputs.who-to-greet }}
