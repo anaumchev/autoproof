@@ -1,6 +1,5 @@
 #!/bin/sh -l
-
-echo "Hello $1"
+/usr/local/Eiffel/studio/spec/linux-x86-64/bin/autoproof.sh -batch -config *.ecf
+/usr/local/Eiffel/studio/spec/linux-x86-64/bin/autoproof.sh -batch -config *.ecf -verify collection:cluster
 #time=$(date)
-time=`autoproof.sh 2>&1`
-echo "::set-output name=time::$time"
+#echo "::set-output name=time::$time"
