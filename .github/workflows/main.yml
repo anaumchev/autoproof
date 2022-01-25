@@ -11,9 +11,9 @@ jobs:
         id: autoproof
         uses: ./
       # Use the output from the `hello` step
-      - name: Get the compilation output
+      - name: Compilation output
         run:
           echo "${{ steps.autoproof.outputs.compilation }}"
-      - name: Get the verification output
+      - name: Verification output
         run:
           echo "${{ steps.autoproof.outputs.verification }}"
