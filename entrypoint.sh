@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 export ISE_EIFFEL=/usr/local/Eiffel
 export ISE_PLATFORM=linux-x86-64
 $ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin/autoproof.sh -batch -config *.ecf
