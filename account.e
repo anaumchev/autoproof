@@ -93,6 +93,6 @@ feature -- Basic operations
 invariant
 	credit_limit_not_positive: 0 >= credit_limit
 	balance_non_negative: balance >= credit_limit
-	
+	false
 end
 
