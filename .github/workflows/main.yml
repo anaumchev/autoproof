@@ -10,10 +10,3 @@ jobs:
       - name: Compile & verify
         id: autoproof
         uses: ./
-      # Use the output from the `hello` step
-      - name: Compilation output
-        run:
-          echo "${{ steps.autoproof.outputs.compilation }}"
-      - name: Verification output
-        run:
-          echo "${{ steps.autoproof.outputs.verification }}"
