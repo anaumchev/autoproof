@@ -1,71 +1,16 @@
-
-name: AutoProof
-
-description: This workflow runs the AutoProof verifier on your Eiffel project.
-
-branding:
-  icon: 'check'
-  color: 'green'
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-
-#      - name: Cache AP
-#        id: cache-ap
-#        uses: actions/cache@v2
-#        with:
-#          path: /usr/local/Eiffel;
-#          key: ${{ runner.os }}-ap
-
-      - name: Download AutoProof distribution
-#        if: steps.cache-ap.outputs.cache-hit != 'true'
-        run:
-          wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
-          tar xvf autoproof.tar.gz;
-          sudo mv $GITHUB_WORKSPACE/Eiffel_* /usr/local/Eiffel
-          
-
-      - name: Install z3
-        run:
-          sudo apt-get install -y z3
-
-      - name: Install .NET
-        run:
-          sudo apt-get install -y dotnet-runtime-6.0
-
-      - name: Compile
-        run:
-          $ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin/ec_ap -batch -config *.ecf
-        env:
-          ISE_EIFFEL: /usr/local/Eiffel
-          ISE_PLATFORM: linux-x86-64     
-     
-      - name: Verify
-        run:
-          $ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin/autoproof.sh -batch -config *.ecf -verify collection:cluster
-        env:
-          ISE_EIFFEL: /usr/local/Eiffel
-          ISE_PLATFORM: linux-x86-64
-
-
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
