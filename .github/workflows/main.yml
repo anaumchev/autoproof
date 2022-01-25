@@ -7,11 +7,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2    
-      - name: Hello world action step
-        id: hello
+      - name: Compile & verify
+        id: autoproof
         uses: ./
-        with:
-          who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the compilation output
+        run:
+          echo "${{ steps.autoproof.outputs.compilation }}"
+      - name: Get the verification output
+        run:
+          echo "${{ steps.autoproof.outputs.verification }}"
