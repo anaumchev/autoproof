@@ -1,7 +1,11 @@
 # action.yml
 name: 'AutoProof'
 description: 'Compile and verify an Eiffel project'
-    
+
+branding:
+  icon: 'check'  
+  color: 'green'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
