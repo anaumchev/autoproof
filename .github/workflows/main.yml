@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2    
-      - name: Compile & verify
-        id: autoproof
-        uses: ./
+      - name: AutoProof
+        uses: anaumchev/autoproof@v1.0.2
+
