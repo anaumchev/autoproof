@@ -78,7 +78,7 @@ feature -- Basic operations
 		require
 			amount_not_negative: amount >= 0
 			amount_available: amount <= available_amount
---			no_aliasing: other /= Current
+			no_aliasing: other /= Current
 
 
 		do
