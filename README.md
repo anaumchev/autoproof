@@ -9,3 +9,7 @@ The Docker image may be pulled and used independently (https://hub.docker.com/re
 # Example
 The following file contains an example of a workflow that applies the AutoProof action: https://github.com/anaumchev/autoproof/blob/45db5512f6cad309e80f868ff64cc800094d3323/.github/workflows/main.yml.
 The action is applied to a simple Eiffel project (specified in the ap_project.ecf file) that consists of a single class (file account.e).
+
+# Credits
+AutoProof was originally developed by the Chair of Software Engineering at ETH Zürich:
+http://se.inf.ethz.ch/research/autoproof/
